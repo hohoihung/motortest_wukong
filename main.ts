@@ -18,6 +18,14 @@ input.onButtonPressed(Button.B, function () {
     wuKong.setMotorSpeed(wuKong.MotorList.M2, _M2speed)
     serial.writeValue("M2 Speed", _M2speed)
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    if (_direction == 1) {
+        _direction = 0
+    } else {
+        _direction = 1
+    }
+    serial.writeValue("Direction", _direction)
+})
 let _direction = 0
 let _M2speed = 0
 let _M1Speed = 0
